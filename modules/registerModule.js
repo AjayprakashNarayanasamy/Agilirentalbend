@@ -21,7 +21,7 @@ exports.signin = async(req , res , next)=>
     const isValid = await bcrypt.compare(req.body.password , existUser.password )
     if(!isValid) return res.status(400).send({msg:"Incorrect Password"})
     
-    const token = jwt.sign(existUser, "AGILI",{expiresIn:"1hr"})
+    const token = jwt.sign(existUser, "AGILI",{expiresIn:"365d"})
     res.send(token);
 
 

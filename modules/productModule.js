@@ -4,7 +4,7 @@ module.exports.getProduct = async(req , res , next)=>
 {
     try{
         var response = await mongo.db.collection("Products").find().toArray()
-        res.send(response)
+         res.send(response)
 
     }catch(err)
     {
